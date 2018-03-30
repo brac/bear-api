@@ -5,7 +5,6 @@ const express    = require('express')
 const app        = express()
 const bodyParser = require('body-parser')
 const router     = express.Router()
-const client     = require('./database/client')
 const mainRoutes = require('./routes')
 const apiRoutes  = require('./routes/api.js')
 
