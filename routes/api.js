@@ -34,6 +34,12 @@ router.post('/bears', (req, res) => {
   })
 })
 
+router.delete('/bears/:id', (req, res) =>{
+  queries.deleteBear(req.params.id).then( result => {
+    res.json({message: result})
+  })
+})
+
 
 
 

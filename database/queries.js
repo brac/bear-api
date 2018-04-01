@@ -46,8 +46,24 @@ const listSingle = (id) => {
   )
 }
 
+const deleteBear = (id) => {
+  return client.query(
+    `
+    DELETE
+    FROM
+      bears
+    WHERE
+      id = $1
+    `, [id]
+  ).then(
+    () => `deleted bear with id: ${id}`,
+    error => { throw new Error(`Error during delete: ${error}`)}
+  )
+}
+
 module.exports = {
   list,
   create,
-  listSingle
+  listSingle,
+  deleteBear
 }
